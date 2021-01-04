@@ -5,6 +5,7 @@ public class PigTests {
   public static void main(String[] args) {
     testPigSimple();
     testPigRegular();
+    testPigBest();
   }
 
   public static void testPigSimple() {
@@ -71,6 +72,27 @@ public class PigTests {
     results.add(PigLatin.pigLatin(one).equals("may"));
 
     showResults(results, "Test pig latin");
+  }
+
+  public static void testPigBest() {
+    ArrayList<Boolean> results = new ArrayList<Boolean>();
+
+    String one = "**##$%catsca88**tscats";
+    results.add(PigLatin.pigLatinBest(one).equals("**##$%catsca88**tscats"));
+
+    one = "o0000o99";
+    results.add(PigLatin.pigLatinBest(one).equals("o0000o9hay9"));
+
+    one = "5m";
+    results.add(PigLatin.pigLatinBest(one).equals("5m"));
+
+    one = "x";
+    results.add(PigLatin.pigLatinBest(one).equals("xay"));
+
+    one = "HAYisGood?!";
+    results.add(PigLatin.pigLatinBest(one).equals("AYisGood?Hay!"));
+
+    showResults(results, "Test best pig latin");
   }
 
   private static void showRandomResults(ArrayList<String> info) {
