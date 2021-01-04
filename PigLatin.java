@@ -2,7 +2,15 @@ import java.util.*;
 
 public class PigLatin {
   public static void main(String[] args) {
-
+    Scanner scan = new Scanner(System.in);
+    while (scan.hasNextLine()) {
+      Scanner lineScan = new Scanner(scan.nextLine());
+      while (lineScan.hasNext()) {
+        String word = lineScan.next();
+        System.out.print(pigLatinBest(word) + " ");
+      }
+      System.out.println();
+    }
   }
 
   public static String pigLatinSimple(String s) {
