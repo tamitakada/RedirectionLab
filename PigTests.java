@@ -4,6 +4,7 @@ public class PigTests {
 
   public static void main(String[] args) {
     testPigSimple();
+    testPigRegular();
   }
 
   public static void testPigSimple() {
@@ -28,6 +29,48 @@ public class PigTests {
     results.add(PigLatin.pigLatinSimple(one).equals("ockmay"));
 
     showResults(results, "Test simple pig latin");
+  }
+
+  public static void testPigRegular() {
+    ArrayList<Boolean> results = new ArrayList<Boolean>();
+
+    String one = "catscatscats";
+    results.add(PigLatin.pigLatin(one).equals("atscatscatscay"));
+
+    one = "aaron";
+    results.add(PigLatin.pigLatin(one).equals("aaronhay"));
+
+    one = "pie";
+    results.add(PigLatin.pigLatin(one).equals("iepay"));
+
+    one = "elephants hm ";
+    results.add(PigLatin.pigLatin(one).equals("elephants hm hay"));
+
+    one = "david";
+    results.add(PigLatin.pigLatin(one).equals("avidday"));
+
+    one = "mock";
+    results.add(PigLatin.pigLatin(one).equals("ockmay"));
+
+    one = "the";
+    results.add(PigLatin.pigLatin(one).equals("ethay"));
+
+    one = "check";
+    results.add(PigLatin.pigLatin(one).equals("eckchay"));
+
+    one = "skee";
+    results.add(PigLatin.pigLatin(one).equals("eeskay"));
+
+    one = "emu";
+    results.add(PigLatin.pigLatin(one).equals("emuhay"));
+
+    one = "grade";
+    results.add(PigLatin.pigLatin(one).equals("adegray"));
+
+    one = "m";
+    results.add(PigLatin.pigLatin(one).equals("may"));
+
+    showResults(results, "Test pig latin");
   }
 
   private static void showRandomResults(ArrayList<String> info) {
