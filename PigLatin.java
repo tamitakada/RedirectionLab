@@ -14,9 +14,9 @@ public class PigLatin {
   }
 
   public static String pigLatinSimple(String s) {
-    char[] vows = {'a', 'e', 'i', 'o', 'u'};
-    ArrayList<Character> vowels = convertArrToList(vows);
-    if (vowels.contains(s.charAt(0))) return s + "hay";
+    String[] vows = {"a", "e", "i", "o", "u"};
+    ArrayList<String> vowels = convertArrToList(vows);
+    if (vowels.contains(s.substring(0, 1).toLowerCase())) return s + "hay";
     return s.substring(1, s.length()) + s.charAt(0) + "ay";
   }
 
@@ -26,7 +26,7 @@ public class PigLatin {
     "sn", "sp", "st", "sw", "th", "tr", "tw", "wh", "wr"};
     ArrayList<String> digraphs = convertArrToList(digs);
 
-    if (s.length() > 1 && digraphs.contains(s.substring(0, 2))) {
+    if (s.length() > 1 && digraphs.contains(s.substring(0, 2).toLowerCase())) {
       return s.substring(2, s.length()) + s.substring(0, 2) + "ay";
     }
     return pigLatinSimple(s);

@@ -92,6 +92,9 @@ public class PigTests {
     one = "HAYisGood?!";
     results.add(PigLatin.pigLatinBest(one).equals("AYisGood?Hay!"));
 
+    one = "Under construction!";
+    results.add(PigLatin.pigLatinBest(one).equals("Under constructionhay!"));
+
     showResults(results, "Test best pig latin");
   }
 
